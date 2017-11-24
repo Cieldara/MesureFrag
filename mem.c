@@ -87,7 +87,7 @@ void mem_init(char* mem, size_t taille){
         first_free_zone->size = taille-sizeof(struct fb*);
         first_free_zone->next = NULL;
         //printf("Taille : %lu , Adresse de la premiere zone libre: %p\n",(size_t)first_free_zone->size,first_free_zone);
-        mem_fit(&mem_fit_first);
+        mem_fit(&mem_fit_worst);
 	requested_sizes = open("requested_sizes.txt", O_WRONLY | O_CREAT, S_IRWXU | S_IRGRP | S_IWGRP | S_IROTH);
 	real_sizes = open("real_sizes.txt", O_WRONLY | O_CREAT, S_IRWXU | S_IRGRP | S_IWGRP | S_IROTH);
 	index = 0;
